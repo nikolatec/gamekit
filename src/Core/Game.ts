@@ -48,24 +48,34 @@ class Game {
   }
 
   private update() {
-
-    for (let key in this.entites) {
-      for (let entity of this.entites[key]) {
-        entity.update(this.scene);
+    
+    try {
+      for (let key in this.entites) {
+        for (let entity of this.entites[key]) {
+          entity.update(this.scene);
+        }
       }
+    }
+    catch (err) {
+      console.log(err);
     }
   }
 
   private draw(timestamp: number) {
-    
-    this.scene.clear();
-    for (let key in this.entites) {
-      for (let entity of this.entites[key]) {
-        entity.draw(this.scene);
+
+    try {
+      this.scene.clear();
+      for (let key in this.entites) {
+        for (let entity of this.entites[key]) {
+          entity.draw(this.scene);
+        }
       }
+      this.showFps && this.drawFps(timestamp);
+      this.previousDrawTime = timestamp;
     }
-    this.showFps && this.drawFps(timestamp);
-    this.previousDrawTime = timestamp;
+    catch (err) {
+      console.log(err);
+    }
   }
 
   private drawFps(timestamp: number) {
