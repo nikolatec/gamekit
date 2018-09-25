@@ -59,13 +59,13 @@ class Game {
   private draw(timestamp: number) {
     
     this.scene.clear();
-    this.showFps && this.drawFps(timestamp);
-    this.previousDrawTime = timestamp;
     for (let key in this.entites) {
       for (let entity of this.entites[key]) {
         entity.draw(this.scene);
       }
     }
+    this.showFps && this.drawFps(timestamp);
+    this.previousDrawTime = timestamp;
   }
 
   private drawFps(timestamp: number) {
