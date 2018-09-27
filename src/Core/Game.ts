@@ -1,4 +1,5 @@
 import Scene from './Scene';
+import WrapText from './WrapText';
 
 class Game {
 
@@ -57,7 +58,7 @@ class Game {
       }
     }
     catch (err) {
-      console.log(err);
+      this.handleError(err);
     }
   }
 
@@ -74,13 +75,34 @@ class Game {
       this.previousDrawTime = timestamp;
     }
     catch (err) {
-      console.log(err);
+      this.handleError(err);
     }
+  }
+
+  private handleError(err: Error) {
+    const unit = 10;
+    const leftMargin = this.scene.canvas.width * 0.1;
+    const topMargin = this.scene.canvas.height * 0.1;
+    const maxWidth = this.scene.canvas.width * 0.8;
+    this.scene.context.fillStyle = 'red';
+    this.scene.context.font = `${unit * 3}px Arial`;
+    this.scene.context.fillText(err.message, this.scene.canvas.width * 0.1, topMargin);
+    this.scene.context.font = `${unit * 2}px Arial`;
+    WrapText({
+      scene: this.scene,
+      text: err.stack,
+      x: leftMargin,
+      y: topMargin + unit * 3,
+      maxWidth,
+      lineHeight: 20
+    });
+    // this.scene.context.fillText(err.stack, 100, 140);
   }
 
   private drawFps(timestamp: number) {
 
     const fps = Math.floor(1000 / (timestamp - this.previousDrawTime));
+    this.scene.context.font = '10px Arial';
     this.scene.context.fillStyle = 'white';
     this.scene.context.fillText(fps, this.scene.canvas.width - 17, 10);
   }
