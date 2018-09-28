@@ -7,7 +7,7 @@ import Scene from './Core/Scene';
 import AssetLoader from './Core/AssetLoader';
 import WrapText from './Core/WrapText';
 
-export default {
+export {
   AnimationFrame,
   Entity,
   Events,

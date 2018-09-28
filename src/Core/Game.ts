@@ -16,6 +16,7 @@ class Game {
     this.update = this.update.bind(this);
     this.draw = this.draw.bind(this);
     this.scene = new Scene({width, height});
+    this.scene.WrapText = WrapText;
   }
 
   public getEntites() {
@@ -80,6 +81,7 @@ class Game {
   }
 
   private handleError(err: Error) {
+    
     const unit = 10;
     const leftMargin = this.scene.canvas.width * 0.1;
     const topMargin = this.scene.canvas.height * 0.1;
