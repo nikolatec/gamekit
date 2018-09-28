@@ -5,6 +5,8 @@ import IPoint from './IPoint';
 import IScene from './IScene';
 import ITransform from './ITransform';
 import IVelocity from './IVelocity';
+import ISprite from './ISprite';
+import IWrapText from './IWrapText';
 
 export {
   IColor,
@@ -13,5 +15,7 @@ export {
   IPoint,
   IScene,
   ITransform,
-  IVelocity
+  IVelocity,
+  ISprite,
+  IWrapText
 }

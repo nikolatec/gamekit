@@ -1,5 +1,4 @@
-import Scene from './Scene';
-import WrapText from './WrapText';
+import Scene from './Scene/Scene';
 
 class Game {
 
@@ -16,7 +15,6 @@ class Game {
     this.update = this.update.bind(this);
     this.draw = this.draw.bind(this);
     this.scene = new Scene({width, height});
-    this.scene.WrapText = WrapText;
   }
 
   public getEntites() {
@@ -90,8 +88,7 @@ class Game {
     this.scene.context.font = `${unit * 3}px Arial`;
     this.scene.context.fillText(err.message, this.scene.canvas.width * 0.1, topMargin);
     this.scene.context.font = `${unit * 2}px Arial`;
-    WrapText({
-      scene: this.scene,
+    this.scene.wrapText({
       text: err.stack,
       x: leftMargin,
       y: topMargin + unit * 3,
@@ -107,15 +104,6 @@ class Game {
     this.scene.context.font = '10px Arial';
     this.scene.context.fillStyle = 'white';
     this.scene.context.fillText(fps, this.scene.canvas.width - 17, 10);
-  }
-
-  public calculateMousePosition(event: any) {
-
-    const canvasFrame = this.scene.canvas.getBoundingClientRect();
-    const root = document.documentElement;
-    const x = event.clientX - canvasFrame.left - root.scrollLeft;
-    const y = event.clientY - canvasFrame.left - root.scrollTop;
-    return { x, y };
   }
 }
 

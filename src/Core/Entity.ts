@@ -1,6 +1,6 @@
 import Game from './Game';
 import IEntity from './Interfaces/IEntity';
-import Scene from './Scene';
+import IScene from './Interfaces/IScene';
 
 export default abstract class Entity implements IEntity {
 
@@ -36,8 +36,8 @@ export default abstract class Entity implements IEntity {
     this.entites[id].push(this);
   }
 
-  abstract draw(scene: Scene): void;
-  abstract update(scene: Scene): void;
+  abstract draw(scene: IScene): void;
+  abstract update(scene: IScene): void;
 
   public getEntitiesById(id: string) {
     
