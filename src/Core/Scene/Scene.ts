@@ -14,7 +14,7 @@ import Text from './Text';
 export default class Scene {
 
   private canvas: any;
-  context: CanvasRenderingContext2D;
+  private context: CanvasRenderingContext2D;
 
   constructor(props?: ITransform) {
 
