@@ -18,6 +18,7 @@ class Game {
   }
 
   public getEntites() {
+    
     return this.entites;
   }
 
@@ -84,10 +85,15 @@ class Game {
     const leftMargin = this.scene.canvas.width * 0.1;
     const topMargin = this.scene.canvas.height * 0.1;
     const maxWidth = this.scene.canvas.width * 0.8;
-    this.scene.context.fillStyle = 'red';
-    this.scene.context.font = `${unit * 3}px Arial`;
-    this.scene.context.fillText(err.message, this.scene.canvas.width * 0.1, topMargin);
-    this.scene.context.font = `${unit * 2}px Arial`;
+
+    this.scene.text({
+      text: err.message,
+      color: 'red',
+      x: leftMargin,
+      y: topMargin,
+      font: 'Arial',
+      fontSize: unit * 3,
+    });
     this.scene.wrapText({
       text: err.stack,
       x: leftMargin,
@@ -95,6 +101,18 @@ class Game {
       maxWidth,
       lineHeight: 20
     });
+
+    // this.scene.context.fillStyle = 'red';
+    // this.scene.context.font = `${unit * 3}px Arial`;
+    // this.scene.context.fillText(err.message, this.scene.canvas.width * 0.1, topMargin);
+    // this.scene.context.font = `${unit * 2}px Arial`;
+    // this.scene.wrapText({
+    //   text: err.stack,
+    //   x: leftMargin,
+    //   y: topMargin + unit * 3,
+    //   maxWidth,
+    //   lineHeight: 20
+    // });
     // this.scene.context.fillText(err.stack, 100, 140);
   }
 

@@ -2,10 +2,14 @@ import ITransform from '../Interfaces/ITransform';
 import IWrapText from '../Interfaces/IWrapText';
 import ISprite from '../Interfaces/ISprite';
 import IRect from '../Interfaces/IRect';
+import IArc from '../Interfaces/IArc';
+import IText from '../Interfaces/IText';
 import WrapText from './WrapText';
 import Sprite from './Sprite';
 import Clear from './Clear';
 import Rect from './Rect';
+import Arc from './Arc';
+import Text from './Text';
 
 export default class Scene {
 
@@ -40,4 +44,14 @@ export default class Scene {
 
     Rect({color, x, y, width, height});
   }
+
+  public arc({color, x, y, radius, startAngle, endAngle, close}: IArc) {
+
+    Arc({color, x, y, radius, startAngle, endAngle, close});
+  }
+
+  public text({text, color, font, fontSize, x, y}: IText) {
+
+    Text({text, color, font, fontSize, x, y});
+  };
 }

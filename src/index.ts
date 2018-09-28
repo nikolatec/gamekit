@@ -7,6 +7,7 @@ import CalculateMousePosition from './Core/Inputs/CalculateMousePosition';
 import Scene from './Core/Scene/Scene';
 import AssetLoader from './Core/AssetLoader';
 import WrapText from './Core/Scene/WrapText';
+import Text from './Core/Scene/Text';
 
 export {
   AnimationFrame,
@@ -18,4 +19,5 @@ export {
   Scene,
   AssetLoader,
   WrapText,
+  Text
 }
