@@ -80,6 +80,8 @@ class Game {
   }
 
   private handleError(err: Error) {
+
+    this.scene.clear('red');
     
     const unit = 10;
     const leftMargin = this.scene.canvas.width * 0.1;
@@ -88,7 +90,7 @@ class Game {
 
     this.scene.text({
       text: err.message,
-      color: 'red',
+      color: 'white',
       x: leftMargin,
       y: topMargin,
       font: 'Arial',
@@ -99,7 +101,7 @@ class Game {
       x: leftMargin,
       y: topMargin + unit * 3,
       maxWidth,
-      lineHeight: 20
+      lineHeight: unit * 3
     });
   }
 

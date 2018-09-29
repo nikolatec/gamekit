@@ -24,9 +24,9 @@ export default class Scene {
     this.canvas.height = height;
   }
 
-  public clear() {
+  public clear(color: string = 'black') {
 
-    Clear();
+    Clear(color);
   }
 
   public sprite({image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight}: ISprite) {
