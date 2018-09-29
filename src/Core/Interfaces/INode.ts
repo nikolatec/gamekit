@@ -1,4 +1,5 @@
-export default interface IId {
+export default interface INode {
   
-  id?: string;
+  id: string;
+  color: string;
 }

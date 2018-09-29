@@ -16,9 +16,8 @@ export default class Scene {
   private canvas: any;
   private context: CanvasRenderingContext2D;
 
-  constructor(props?: ITransform) {
+  constructor({width = 400, height = 400}: ITransform) {
 
-    const {width = 400, height = 400} = props;
     this.canvas = document.getElementById('canvas');
     this.context = this.canvas.getContext('2d');
     this.canvas.width  = width;

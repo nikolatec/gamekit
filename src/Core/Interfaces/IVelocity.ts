@@ -1,5 +1,5 @@
 export default interface IVelocity {
   
-  xVelocity?: number;
-  yVelocity?: number;
+  x: number;
+  y: number;
 }

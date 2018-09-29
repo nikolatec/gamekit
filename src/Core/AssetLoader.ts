@@ -1,4 +1,5 @@
 export default class AssetLoader {
+    
   static loadcount = 0;
   static loadtotal = 0;
   static preloaded = false;

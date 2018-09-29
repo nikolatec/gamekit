@@ -1,4 +1,3 @@
-import IColor from './IColor';
 import IEntity from './IEntity';
 import INode from './INode';
 import IPoint from './IPoint';
@@ -9,7 +8,6 @@ import ISprite from './ISprite';
 import IWrapText from './IWrapText';
 
 export {
-  IColor,
   IEntity,
   INode,
   IPoint,

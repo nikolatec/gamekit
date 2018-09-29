@@ -1,5 +1,5 @@
 export default interface ITransform {
   
-  width?: number;
-  height?: number;
+  width: number;
+  height: number;
 }

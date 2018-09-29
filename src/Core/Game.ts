@@ -4,9 +4,9 @@ class Game {
 
   private fps: number = 60;
   private showFps: boolean = false;
-  private previousDrawTime: number;
-  scene: any;
+  private previousDrawTime: number = 0;
   private entites: any = {};
+  public scene: any;
 
   constructor({width = 400, height = 400} : any) {
 
