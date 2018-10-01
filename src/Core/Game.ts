@@ -6,7 +6,7 @@ class Game {
   private showFps: boolean = false;
   private previousDrawTime: number = 0;
   private entites: any = {};
-  public scene: any;
+  public scene: any = {};
 
   constructor({width = 400, height = 400} : any) {
 
@@ -103,6 +103,8 @@ class Game {
       maxWidth,
       lineHeight: unit * 3
     });
+
+    throw(err);
   }
 
   private drawFps(timestamp: number) {
